@@ -1,7 +1,8 @@
+#include <cstdlib>
 #include <stdio.h>
 #include <math.h>
 
-int main(){
+int main(int argc, char * argv[]){
   
   double semitone_ratio;
   double c0;  // for frequency of MIDI Note 0
@@ -16,8 +17,12 @@ int main(){
   c5 = 220. * pow(semitone_ratio, 3);
   // MIDI Note - is C, 5 octaves below Middle C
   c0 = c5 * pow(.5 , 5);
+  if(argc != 2){
+    printf("ERROR Usage: Midi2Freq <midiNumber>\n");
+    return 1;
+  }
 
-  midinote = 70;
+  midinote = atoi(argv[1]);
   frequency = c0 * pow(semitone_ratio, midinote);
 
   printf("MIDI note %d has frequency %f\n", midinote, frequency);
