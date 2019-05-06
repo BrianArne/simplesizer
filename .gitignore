@@ -1,4 +1,2 @@
 *.swp
-
-# ignores binaries
-[^\.]*
+bin/
