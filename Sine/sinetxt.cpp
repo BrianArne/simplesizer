@@ -11,6 +11,7 @@
 enum {ARG_NAME, ARG_NSAMPS, ARG_FREQ, ARG_SR, ARG_NARGS};
 
 int main(int argc, char** argv){
+  int j;
   int i, nsamps;
   double samp, freq, srate;
   double twopi = 2.0 * M_PI;
@@ -26,9 +27,12 @@ int main(int argc, char** argv){
 
   // Make one complete cycle
   angleincr = twopi * freq/srate;
-  for (i = 0; i < nsamps; i++){
-    samp = sin(angleincr * i);
-    fprintf(stdout, "%.8lf\n", samp);
+  while (j < 1000 ){
+    for (i = 0; i < nsamps; i++){
+      samp = sin(angleincr * i);
+      fprintf(stdout, "%.8lf\t%.8lf\n", samp, samp*samp);
+    }
+    j++;
   }
   fprintf(stderr, "done\n");
   return 0;
