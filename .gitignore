@@ -1,4 +1,6 @@
 *.swp
 *.o
+*.exe
 bin/
 Audio_Pro*
+.DS_Store
