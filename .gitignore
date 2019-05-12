@@ -3,4 +3,5 @@
 *.exe
 bin/
 Audio_Pro*
-.DS_Store
+/.DS_Store
+twoForkBin
